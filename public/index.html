@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Welcome</h1>
+        <p>Please enter your name to receive a greeting.</p>
+        
+        <form action="/greet" method="POST">
+            <input type="text" name="userName" placeholder="Enter your name" required>
+            <button type="submit">Get Greeting</button>
+        </form>
+    </div>
+
+</body>
+</html>
