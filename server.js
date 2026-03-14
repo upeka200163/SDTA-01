@@ -2,20 +2,20 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-
 app.use(express.static("public")); 
-
 app.use(express.urlencoded({ extended: true }));
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+
 app.post('/greet', (req, res) => {
     const name = req.body.userName; 
-    
     res.redirect(`/hello?name=${encodeURIComponent(name)}`);
 });
+
 
 app.get('/hello', (req, res) => {
     const name = req.query.name || "Guest";
@@ -35,7 +35,6 @@ app.get('/hello', (req, res) => {
         </html>
     `);
 });
-
 
 const PORT = 3000;
 app.listen(PORT, () => {
